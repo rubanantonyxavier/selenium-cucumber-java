@@ -1,19 +1,114 @@
-plugins {
-    id 'java'
+buildscript {
+
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath "io.qameta.allure.gradle.allure:allure-plugin:2.9.6"
+    }
 }
 
-group 'org.example'
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.9.6'
+}
+
+group 'com.automation.ui'
 version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
 
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
 }
 
-test {
-    useJUnitPlatform()
+ext {
+    seleniumVersion = '3.141.59'
+    webDriverManagerVersion = '5.2.0'
+    cucumberVersion = '7.8.1'
+    assertjVersion = '3.23.1'
+    lombokVersion = '1.18.24'
+    reflectionsVersion = '0.10.2'
+    allureVersion = '2.19.0'
+    snakeyamlVersion = '1.33'
+    availableEnvs = ['qa', 'dev', 'uat']
+    currentEnv = getEnv()
+}
+
+dependencies {
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: seleniumVersion
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: webDriverManagerVersion
+    implementation group: 'io.cucumber', name: 'cucumber-java', version: cucumberVersion
+    testImplementation group: 'io.cucumber', name: 'cucumber-picocontainer', version: cucumberVersion
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: assertjVersion
+    implementation group: 'org.projectlombok', name: 'lombok', version: lombokVersion
+    testImplementation group: 'org.projectlombok', name: 'lombok', version: lombokVersion
+    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: lombokVersion
+    testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: lombokVersion
+    implementation group: 'org.reflections', name: 'reflections', version: reflectionsVersion
+    implementation group: 'io.qameta.allure', name: 'allure-cucumber7-jvm', version: allureVersion
+    implementation group: 'org.yaml', name: 'snakeyaml', version: snakeyamlVersion
+}
+
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+
+allure {
+    version = allureVersion
+}
+
+task cucumber() {
+    dependsOn assemble, testClasses
+    def tags = findProperty('tags') == null
+            ? ''
+            : "${findProperty('tags')}"
+
+    tags = tags.isEmpty()
+            ? tags
+            : "($tags) and"
+
+    tags = "$tags${createExcludedTagsCmd("$currentEnv")}"
+    println "Executing on $currentEnv with filter: $tags..."
+
+    def threads = findProperty('threads') == null
+            ? '1'
+            : findProperty('threads')
+
+    doLast {
+        javaexec {
+            systemProperties System.properties
+            environment "ENV", currentEnv
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            //noinspection GroovyUnusedAssignment
+            args = ['--plugin', 'pretty',
+                    '--plugin', 'io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm',
+                    '--glue', 'com.automation.ui.step_definitions',
+                    '--tags', tags,
+                    '--threads', threads,
+                    'src/test/resources/features']
+        }
+    }
+}
+
+@SuppressWarnings('GrMethodMayBeStatic')
+private String getEnv() {
+    String env = System.getenv("ENV") != null ? System.getenv("ENV") : "QA"
+    return env
+}
+
+@SuppressWarnings('GrMethodMayBeStatic')
+String createExcludedTagsCmd(String currentEnv) {
+    return this.availableEnvs.stream()
+            .filter(it -> it != currentEnv.toLowerCase())
+            .reduce(" not (@ignore", (subtotal, element) ->
+                    "$subtotal or @${element}_only") + ")"
 }
