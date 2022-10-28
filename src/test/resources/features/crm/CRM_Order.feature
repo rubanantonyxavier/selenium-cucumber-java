@@ -1,21 +1,21 @@
 @ui
-@lsr
+@crm
 @order
-Feature: LSR - Order
+Feature: CRM - Order
 
-  Scenario: Verify LSR - Order is successful
-    Given open LSR URL
-    Then verify LSR Login page is displayed
-    When login in LSR Application
-    Then verify LSR Search page is displayed
-    When click on Order Tab in LSR
+  Scenario: Verify CRM - Order is successful
+    Given open CRM URL
+    Then verify CRM Login page is displayed
+    When login in CRM Application
+    Then verify CRM Search page is displayed
+    When click on Order Tab in CRM
     And switch to New window
-    Then verify LSR Order page is displayed
-    And click to EXPAND the sections in in LSR Order page
+    Then verify CRM Order page is displayed
+    And click to EXPAND the sections in in CRM Order page
       | Primary Borrower Information  |
       | Real Estate Owned Information |
       | Loan Data Information         |
-    When the TEXT BOX is filled with values in LSR Order page
+    When the TEXT BOX is filled with values in CRM Order page
       | Field Name                | Field Value              |
       | Street Address            | 202 hartnell pl          |
       | City                      | sacramento               |
@@ -55,7 +55,7 @@ Feature: LSR - Order
       | LD Loan Term              | 1                        |
       | LD Interest Rate          | 5                        |
       | LD Cash Out Amount        | 60,000                   |
-    And the DROP DOWN is filled with values in LSR Order page
+    And the DROP DOWN is filled with values in CRM Order page
       | Field Name                      | Field Value                           |
       | Property Type                   | PUD                                   |
       | Occupancy Type                  | Primary Residence                     |
@@ -69,10 +69,10 @@ Feature: LSR - Order
       | LD Loan Status                  | Application                           |
       | LD Document Type                | Full doc                              |
       | LD Lien Type                    | First                                 |
-    And click on Submit button in LSR Order page
-    Then verify LSR Process Order page is displayed
-    And verify LSFM Report is displayed in LSR Process Order page
-    And verify the expected Field Value is displayed in LSR Process Order page
+    And click on Submit button in CRM Order page
+    Then verify CRM Process Order page is displayed
+    And verify LSFM Report is displayed in CRM Process Order page
+    And verify the expected Field Value is displayed in CRM Process Order page
       | Field Name             | Field Value                             |
       | USV - Report Order No. | [NOT EMPTY]                             |
       | USV - Street Address   | 202 HARTNELL PL                         |

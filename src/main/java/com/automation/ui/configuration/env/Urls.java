@@ -9,5 +9,5 @@ import lombok.ToString;
 @ToString
 public class Urls {
     private String rqUI;
-    private String lsrUI;
+    private String crmUI;
 }

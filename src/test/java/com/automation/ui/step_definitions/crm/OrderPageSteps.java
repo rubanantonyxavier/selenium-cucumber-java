@@ -1,10 +1,10 @@
-package com.automation.ui.step_definitions.lsr;
+package com.automation.ui.step_definitions.crm;
 
 import com.automation.ui.pojo.datatable.FieldTable;
 import com.automation.ui.step_definitions.common.BaseSteps;
 import com.automation.ui.cucumber.TestContext;
 import com.automation.ui.helpers.Folding;
-import com.automation.ui.pages.lsr.OrderPage;
+import com.automation.ui.pages.crm.OrderPage;
 import com.automation.ui.utils.CustomStringUtil;
 import com.automation.ui.utils.RandomUtil;
 import io.cucumber.java.en.And;
@@ -22,24 +22,24 @@ public class OrderPageSteps extends BaseSteps {
         super(testContext);
     }
 
-    @Then("verify LSR Order page is displayed")
+    @Then("verify CRM Order page is displayed")
     public void verifySearchPage() {
         Assertions.assertThat(orderPage.getTitle()).isEqualTo("LoanSafe Reporter");
         Assertions.assertThat(orderPage.getHeaderName()).startsWith("LoanSafe Fraud Manager");
         takeScreenshot();
     }
 
-    @When("click on Submit button in LSR Order page")
+    @When("click on Submit button in CRM Order page")
     public void clickSubmit() {
         orderPage.clickElement("Submit Button");
     }
 
-    @And("^click to (EXPAND|COLLAPSE) the sections in in LSR Order page$")
+    @And("^click to (EXPAND|COLLAPSE) the sections in in CRM Order page$")
     public void clickSections(String action, List<String> sections) {
         orderPage.doFolding(Folding.valueOf(action), sections);
     }
 
-    @When("the TEXT BOX is filled with values in LSR Order page")
+    @When("the TEXT BOX is filled with values in CRM Order page")
     public void enterValueInTextBox(List<FieldTable> fieldTable) {
         fieldTable.forEach(it -> {
             if (it.getFieldValue().startsWith("[RANDOM -->")) {
@@ -53,7 +53,7 @@ public class OrderPageSteps extends BaseSteps {
         });
     }
 
-    @When("the DROP DOWN is filled with values in LSR Order page")
+    @When("the DROP DOWN is filled with values in CRM Order page")
     public void selectValueInDropdown(List<FieldTable> fieldTable) {
         fieldTable.forEach(it -> orderPage.selectDropdownValue(it.getFieldName(), it.getFieldValue()));
     }

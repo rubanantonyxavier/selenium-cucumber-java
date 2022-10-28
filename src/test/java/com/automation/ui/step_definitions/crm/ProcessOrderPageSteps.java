@@ -1,9 +1,9 @@
-package com.automation.ui.step_definitions.lsr;
+package com.automation.ui.step_definitions.crm;
 
 import com.automation.ui.pojo.datatable.FieldTable;
 import com.automation.ui.step_definitions.common.BaseSteps;
 import com.automation.ui.cucumber.TestContext;
-import com.automation.ui.pages.lsr.ProcessOrderPage;
+import com.automation.ui.pages.crm.ProcessOrderPage;
 import com.automation.ui.utils.AssertionUtil;
 import com.automation.ui.utils.CustomStringUtil;
 import io.cucumber.java.en.And;
@@ -21,21 +21,21 @@ public class ProcessOrderPageSteps extends BaseSteps {
         super(testContext);
     }
 
-    @Then("verify LSR Process Order page is displayed")
+    @Then("verify CRM Process Order page is displayed")
     public void verifyProcessOrderPage() {
         Assertions.assertThat(processOrderPage.getTitle()).isEqualTo("LoanSafe Reporter");
         Assertions.assertThat(processOrderPage.isElementDisplayed("Section - USV Header")).isTrue();
         takeScreenshot();
     }
 
-    @Then("verify LSFM Report is displayed in LSR Process Order page")
+    @Then("verify LSFM Report is displayed in CRM Process Order page")
     public void verifySearchPage() {
         Assertions.assertThat(processOrderPage.isElementDisplayed("Section - LSFM Report")).isTrue();
         Assertions.assertThat(processOrderPage.isElementDisplayed("Section - LSFM Report Header")).isTrue();
         takeScreenshot();
     }
 
-    @And("verify the expected Field Value is displayed in LSR Process Order page")
+    @And("verify the expected Field Value is displayed in CRM Process Order page")
     public void verifyExpectedFieldValue(List<FieldTable> fieldTable) {
         SoftAssertions.assertSoftly(softly -> fieldTable.forEach(it -> {
             String extractedText = processOrderPage.getElementText(it.getFieldName());

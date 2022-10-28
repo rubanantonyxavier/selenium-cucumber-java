@@ -1,4 +1,4 @@
-package com.automation.ui.pages.lsr;
+package com.automation.ui.pages.crm;
 
 import com.automation.ui.base.BasePage;
 import com.automation.ui.helpers.ElementName;

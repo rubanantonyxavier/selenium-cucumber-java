@@ -7,7 +7,7 @@ Use `cucumber` gradle-task for running tests
 ### Examples:
 `gradle clean cucumber allureServe` - run all tests in single thread and load the Allure Report
 
-`gradle clean cucumber -P tags="@lsr" -P threads=10` - run only _lsr_ tests in parallel in 10 threads
+`gradle clean cucumber -P tags="@crm" -P threads=10` - run only _lsr_ tests in parallel in 10 threads
 
 `gradle allureServe` - to load the Allure Report
 
@@ -45,7 +45,7 @@ headless_browser=true
 ### Credentials:
 Creds are set with environment variables:
 ```properties
-###For LSR###
+###For CRM###
 LSR_CONTRACT_USER
 LSR_CONTRACT_PSWD
 
@@ -57,11 +57,11 @@ RQ_CONTRACT_PSWD
 ```
 
 ### Scenario filtering:
-`-P tags=@lsr` - to run scenario with _@lsr_ tag only,
+`-P tags=@crm` - to run scenario with _@lsr_ tag only,
 
-`-P tags="@lsr and @rq"` - to run only scenarios with both the _@lsr_ and _@rq_ tags
+`-P tags="@crm and @rq"` - to run only scenarios with both the _@lsr_ and _@rq_ tags
 
-`-P tags="@lsr or @rq"` - to run only scenarios with either the _@lsr_ or _@rq_ tags
+`-P tags="@crm or @rq"` - to run only scenarios with either the _@lsr_ or _@rq_ tags
 
 `-P tags="@ui and not @rq"` - to run `@ui` tests and exclude `@rq` tags
 
