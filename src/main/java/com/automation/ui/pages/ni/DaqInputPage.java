@@ -1,4 +1,4 @@
-package com.automation.ui.pages.rq;
+package com.automation.ui.pages.ni;
 
 import com.automation.ui.base.BasePage;
 import com.automation.ui.helpers.ElementName;
@@ -6,12 +6,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class LsrmInputPage extends BasePage {
+public class DaqInputPage extends BasePage {
 
     @FindBy(id = "fraudRiskReissueTitle")
     private WebElement headerNameContractUser;
 
-    @FindBy(id = "riskTitle")
+    @FindBy(id = "fraudTitle")
     private WebElement headerNameOrderUser;
 
     @FindBy(className = "btn btn-default btn-space")
@@ -23,259 +23,259 @@ public class LsrmInputPage extends BasePage {
 
     //Section Expand or Collapse
     @ElementName("Primary Borrower Information")
-    @FindBy(id = "lsr_includeBorrower")
+    @FindBy(id = "lsf_includeBorrower")
     private WebElement borrowerSection;
 
     @ElementName("Real Estate Owned Information")
-    @FindBy(id = "LSR_uptoproperty")
+    @FindBy(id = "LSF_uptoproperty")
     private WebElement reoSection;
 
     @ElementName("Co-Borrower Information")
-    @FindBy(id = "lsr_includeCoBorrower")
+    @FindBy(id = "lsf_includeCoBorrower")
     private WebElement coBorrowerSection;
 
     @ElementName("Third Borrower Information")
-    @FindBy(id = "lsr_includeThirdBorrower")
+    @FindBy(id = "lsf_includeThirdBorrower")
     private WebElement thirdBorrowerSection;
 
     @ElementName("Fourth Borrower Information")
-    @FindBy(id = "lsr_includeFourthBorrower")
+    @FindBy(id = "lsf_includeFourthBorrower")
     private WebElement fourthBorrowerSection;
 
     @ElementName("Fifth Borrower Information")
-    @FindBy(id = "lsr_includeFifthBorrower")
+    @FindBy(id = "lsf_includeFifthBorrower")
     private WebElement fifthBorrowerSection;
 
     @ElementName("Sixth Borrower Information")
-    @FindBy(id = "lsr_includeSixthBorrower")
+    @FindBy(id = "lsf_includeSixthBorrower")
     private WebElement sixthBorrowerSection;
 
     @ElementName("Loan Data Information")
-    @FindBy(id = "lsr_loanData")
+    @FindBy(id = "lsf_loanData")
     private WebElement loanDataSection;
 
     @ElementName("MLO Information")
-    @FindBy(id = "LSR_uptooriginator")
+    @FindBy(id = "LSF_uptooriginator")
     private WebElement mloSection;
 
     @ElementName("Add Appraiser Information")
-    @FindBy(id = "LSR_uptoappraiser")
+    @FindBy(id = "LSF_uptoappraiser")
     private WebElement appraiserSection;
 
     @ElementName("Add Loan Actors")
-    @FindBy(id = "LSR_uptoloanactor")
+    @FindBy(id = "LSF_uptoloanactor")
     private WebElement loanActorsSection;
 
-    //LSRM Input Section
+    //DAQ Input Section
     @ElementName("Street Address")
-    @FindBy(id = "LSR_address")
+    @FindBy(id = "LSF_address")
     private WebElement streetAddress;
 
     @ElementName("City")
-    @FindBy(id = "LSR_city")
+    @FindBy(id = "LSF_city")
     private WebElement city;
 
     @ElementName("State")
-    @FindBy(id = "LSR_state")
+    @FindBy(id = "LSF_state")
     private WebElement state;
 
     @ElementName("Zip")
-    @FindBy(id = "LSR_zip")
+    @FindBy(id = "LSF_zip")
     private WebElement zip;
 
     @ElementName("County")
-    @FindBy(id = "LSR_USER_PROP_COUNTY")
+    @FindBy(id = "LSF_USER_PROP_COUNTY")
     private WebElement country;
 
     @ElementName("APN")
-    @FindBy(id = "LSR_addressAPN")
+    @FindBy(id = "LSF_addressAPN")
     private WebElement apn;
 
     @ElementName("Estimated Value")
-    @FindBy(id = "LSR_CUST_ESTIMATE")
+    @FindBy(id = "LSF_CUST_ESTIMATE")
     private WebElement estimatedValue;
 
     @ElementName("Property Type")
-    @FindBy(id = "LSR_USER_PROP_TYPE_DESC")
+    @FindBy(id = "LSF_USER_PROP_TYPE_DESC")
     private WebElement propertyTypeDropdown;
 
     @ElementName("Occupancy Type")
-    @FindBy(id = "LSR_USER_OCC_TYPE_DESC")
+    @FindBy(id = "LSF_USER_OCC_TYPE_DESC")
     private WebElement occupancyTypeDropdown;
 
     @ElementName("Sale Price")
-    @FindBy(id = "LSR_USER_SALE_AMOUNT")
+    @FindBy(id = "LSF_USER_SALE_AMOUNT")
     private WebElement salePrice;
 
     @ElementName("Seller Name")
-    @FindBy(id = "LSR_USER_PROPERTY_SELLER")
+    @FindBy(id = "LSF_USER_PROPERTY_SELLER")
     private WebElement sellerName;
 
     //Primary Borrower Information Section
     @ElementName("First Name")
-    @FindBy(id = "LSR_firstname")
+    @FindBy(id = "LSF_firstname")
     private WebElement firstName;
 
     @ElementName("Middle Name")
-    @FindBy(id = "LSR_middlename")
+    @FindBy(id = "LSF_middlename")
     private WebElement middleName;
 
     @ElementName("Last Name")
-    @FindBy(id = "LSR_lastname")
+    @FindBy(id = "LSF_lastname")
     private WebElement lastName;
 
     @ElementName("Suffix")
-    @FindBy(id = "LSR_suffix")
+    @FindBy(id = "LSF_suffix")
     private WebElement suffix;
 
     @ElementName("SSN1")
-    @FindBy(id = "LSR_ssn1")
+    @FindBy(id = "LSF_ssn1")
     private WebElement ssn1;
 
     @ElementName("SSN2")
-    @FindBy(id = "LSR_ssn2")
+    @FindBy(id = "LSF_ssn2")
     private WebElement ssn2;
 
     @ElementName("SSN3")
-    @FindBy(id = "LSR_ssn3")
+    @FindBy(id = "LSF_ssn3")
     private WebElement ssn3;
 
     @ElementName("Phone #")
-    @FindBy(id = "LSR_currentphoneno")
+    @FindBy(id = "LSF_currentphoneno")
     private WebElement phoneNumber;
 
     @ElementName("DOB")
-    @FindBy(id = "LSR_dob")
+    @FindBy(id = "LSF_dob")
     private WebElement dob;
 
     @ElementName("Current Address")
-    @FindBy(id = "LSR_currentaddress")
+    @FindBy(id = "LSF_currentaddress")
     private WebElement currentAddress;
 
     @ElementName("Current City")
-    @FindBy(id = "LSR_currentcity")
+    @FindBy(id = "LSF_currentcity")
     private WebElement currentCity;
 
     @ElementName("Current State")
-    @FindBy(id = "LSR_currentstate")
+    @FindBy(id = "LSF_currentstate")
     private WebElement currentState;
 
     @ElementName("Current Zip")
-    @FindBy(id = "LSR_currentzip")
+    @FindBy(id = "LSF_currentzip")
     private WebElement currentZip;
 
     @ElementName("Employment Type")
-    @FindBy(id = "LSR_emptype")
+    @FindBy(id = "LSF_emptype")
     private WebElement employmetTypeDropdown;
 
     @ElementName("Employer Name")
-    @FindBy(id = "LSR_employername")
+    @FindBy(id = "LSF_employername")
     private WebElement employerName;
 
     @ElementName("Monthly Income")
-    @FindBy(id = "LSR_baseincome")
+    @FindBy(id = "LSF_baseincome")
     private WebElement monthlyIncome;
 
     //Real Estate Owned Information Section
     @ElementName("REO Street Address")
-    @FindBy(id = "LSR_REO0_STREETADDRESS")
+    @FindBy(id = "LSF_REO0_STREETADDRESS")
     private WebElement reoStreetAddress;
 
     @ElementName("REO City")
-    @FindBy(id = "LSR_REO0_CITY")
+    @FindBy(id = "LSF_REO0_CITY")
     private WebElement reoCity;
 
     @ElementName("REO State")
-    @FindBy(id = "LSR_REO0_STATE")
+    @FindBy(id = "LSF_REO0_STATE")
     private WebElement reoState;
 
     @ElementName("REO Zip")
-    @FindBy(id = "LSR_REO0_ZIP")
+    @FindBy(id = "LSF_REO0_ZIP")
     private WebElement reoZip;
 
     @ElementName("REO Property Disposition Status")
-    @FindBy(id = "LSR_REO0_DISPOSITIONSTATUS")
+    @FindBy(id = "LSF_REO0_DISPOSITIONSTATUS")
     private WebElement reoPropertyDispositionStatusDropdown;
 
     @ElementName("REO Property Type")
-    @FindBy(id = "LSR_REO0_PROPERTYTYPE")
+    @FindBy(id = "LSF_REO0_PROPERTYTYPE")
     private WebElement reoPropertyTypeDropdown;
 
     @ElementName("REO Current Residence")
-    @FindBy(id = "LSR_REO0_CURRENTRESIDENCE")
+    @FindBy(id = "LSF_REO0_CURRENTRESIDENCE")
     private WebElement reoCurrentResidenceDropdown;
 
     @ElementName("REO Gross Rental Income")
-    @FindBy(id = "LSR_REO0_GROSSINCOME")
+    @FindBy(id = "LSF_REO0_GROSSINCOME")
     private WebElement reoGrossRentalIncome;
 
     //Loan Data Information Section
     @ElementName("LD Business Channel")
-    @FindBy(id = "LSR_CHANNEL_CODE")
+    @FindBy(id = "LSF_CHANNEL_CODE")
     private WebElement ldBusinessChannelDropdown;
 
     @ElementName("LD Loan #")
-    @FindBy(id = "LSR_USER_LOAN_NUMBER")
+    @FindBy(id = "LSF_USER_LOAN_NUMBER")
     private WebElement ldLoanNumber;
 
     @ElementName("LD Loan Amount")
-    @FindBy(id = "LSR_USER_LOAN_AMOUNT")
+    @FindBy(id = "LSF_USER_LOAN_AMOUNT")
     private WebElement ldLoanAmount;
 
     @ElementName("LD Loan Program")
-    @FindBy(id = "LSR_USER_LOAN_PROD_DESC")
+    @FindBy(id = "LSF_USER_LOAN_PROD_DESC")
     private WebElement ldLoanProgramDropDown;
 
     @ElementName("LD Loan Purpose")
-    @FindBy(id = "LSR_USER_PURPOSE_DESC")
+    @FindBy(id = "LSF_USER_PURPOSE_DESC")
     private WebElement ldLoanPurposeDropdown;
 
     @ElementName("LD Loan Status")
-    @FindBy(id = "LSR_USER_LOAN_STATUS")
+    @FindBy(id = "LSF_USER_LOAN_STATUS")
     private WebElement ldLoanStatusDropdown;
 
     @ElementName("LD Document Type")
-    @FindBy(id = "LSR_USER_DOC_TYPE_DESC")
+    @FindBy(id = "LSF_USER_DOC_TYPE_DESC")
     private WebElement ldDocumentTypeDropdown;
 
     @ElementName("LD Lien Type")
-    @FindBy(id = "LSR_USER_LIEN_DESC")
+    @FindBy(id = "LSF_USER_LIEN_DESC")
     private WebElement ldLienTypeDropdown;
 
     @ElementName("LD Loan-to-Value")
-    @FindBy(id = "LSR_USER_LTV")
+    @FindBy(id = "LSF_USER_LTV")
     private WebElement ldLoanToValue;
 
     @ElementName("LD Debt-to-Income")
-    @FindBy(id = "LSR_USER_DTI")
+    @FindBy(id = "LSF_USER_DTI")
     private WebElement ldDebtToIncome;
 
     @ElementName("LD Combined Loan-to-Value")
-    @FindBy(id = "LSR_USER_CLTV")
+    @FindBy(id = "LSF_USER_CLTV")
     private WebElement ldCombinedLoanToValue;
 
     @ElementName("LD Front End Ratio")
-    @FindBy(id = "LSR_USER_FRONT_END_RATIO")
+    @FindBy(id = "LSF_USER_FRONT_END_RATIO")
     private WebElement ldFrontEndRatio;
 
     @ElementName("LD Monthly PITI")
-    @FindBy(id = "LSR_USER_PITI")
+    @FindBy(id = "LSF_USER_PITI")
     private WebElement ldMonthlyPITI;
 
     @ElementName("LD Application Date")
-    @FindBy(id = "LSR_USER_APPLICATION_DATE")
+    @FindBy(id = "LSF_USER_APPLICATION_DATE")
     private WebElement ldApplicationDate;
 
     @ElementName("LD Loan Term")
-    @FindBy(id = "LSR_USER_TERM")
+    @FindBy(id = "LSF_USER_TERM")
     private WebElement ldLoanTerm;
 
     @ElementName("LD Interest Rate")
-    @FindBy(id = "LSR_USER_INT_RATE")
+    @FindBy(id = "LSF_USER_INT_RATE")
     private WebElement ldInterestRate;
 
     @ElementName("LD Cash Out Amount")
-    @FindBy(id = "LSR_USER_CASH_OUT_AMT")
+    @FindBy(id = "LSF_USER_CASH_OUT_AMT")
     private WebElement ldCashOutAmount;
 
     public String getHeaderNameContractUser() {

@@ -26,11 +26,11 @@ public class ProcessOrderPage extends BasePage {
     private WebElement usvCityStateZip;
 
     //Report Section
-    @ElementName("Section - LSFM Report")
-    @FindBy(id = "lsfm")
+    @ElementName("Section - DAQ Report")
+    @FindBy(id = "daq")
     private WebElement lsfmReportSection;
 
-    @ElementName("Section - LSFM Report Header")
+    @ElementName("Section - DAQ Report Header")
     @FindBy(className = "header_table")
     private WebElement lsfmReportHeaderSection;
 

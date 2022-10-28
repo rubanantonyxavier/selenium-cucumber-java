@@ -1,8 +1,8 @@
-package com.automation.ui.step_definitions.rq;
+package com.automation.ui.step_definitions.ni;
 
 import com.automation.ui.step_definitions.common.BaseSteps;
 import com.automation.ui.cucumber.TestContext;
-import com.automation.ui.pages.rq.PropertyReportPage;
+import com.automation.ui.pages.ni.PropertyReportPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -16,7 +16,7 @@ public class PropertyReportPageSteps extends BaseSteps {
         super(testContext);
     }
 
-    @Then("verify RQ Property Report page is displayed")
+    @Then("verify NI Property Report page is displayed")
     public void verifyPropertyReportPage() {
         Assertions.assertThat(propertyReportPage.isReportSubmitButtonVisible("VIEW REPORT", "VIEW ALL REPORTS"))
                 .overridingErrorMessage("The Report Submit Button with name \"VIEW REPORT\" or \"VIEW ALL REPORTS\" is not displayed")
@@ -26,29 +26,29 @@ public class PropertyReportPageSteps extends BaseSteps {
         takeScreenshot();
     }
 
-    @When("enable Loan Safe Suite in RQ Property Report page")
+    @When("enable Loan Safe Suite in NI Property Report page")
     public void enableLoanSafeSuite() {
         propertyReportPage.enableLoanSafeSuite();
     }
 
-    @And("^select '(Collateral Manager|Fraud Manager|Risk Manager)' in the Loan Safe Suite pop-up in RQ Property Report page$")
+    @And("^select '(Collateral Manager|Fraud Manager|Risk Manager)' in the Loan Safe Suite pop-up in NI Property Report page$")
     public void selectLoanSafeSuite(String option) {
         propertyReportPage.selectLoanSafeSuiteOption(option);
         takeScreenshot();
     }
 
-    @And("^click on (BUY/VIEW ALL REPORTS|VIEW ALL REPORTS|VIEW REPORT|BUY REPORT) button in RQ Property Report page$")
+    @And("^click on (BUY/VIEW ALL REPORTS|VIEW ALL REPORTS|VIEW REPORT|BUY REPORT) button in NI Property Report page$")
     public void clickReportButton(String buttonName) {
         propertyReportPage.clickReportButton(buttonName);
     }
 
-    @Then("verify Report Summary Window is displayed in RQ Property Report page")
+    @Then("verify Report Summary Window is displayed in NI Property Report page")
     public void verifyReportSummaryWindowDisplayed() {
         Assertions.assertThat(propertyReportPage.getReportSummaryWindowHeader()).isEqualTo("Report Summary");
         takeScreenshot();
     }
 
-    @When("^click on (.*) View button in Report Summary Window of RQ Property Report page$")
+    @When("^click on (.*) View button in Report Summary Window of NI Property Report page$")
     public void clickViewInReportSummary(String report) {
         propertyReportPage.clickViewInReportSummary(report);
     }

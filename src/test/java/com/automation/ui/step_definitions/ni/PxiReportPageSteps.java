@@ -1,9 +1,9 @@
-package com.automation.ui.step_definitions.rq;
+package com.automation.ui.step_definitions.ni;
 
 import com.automation.ui.pojo.datatable.FieldTable;
 import com.automation.ui.step_definitions.common.BaseSteps;
 import com.automation.ui.cucumber.TestContext;
-import com.automation.ui.pages.rq.LscmReportPage;
+import com.automation.ui.pages.ni.PxiReportPage;
 import com.automation.ui.utils.AssertionUtil;
 import com.automation.ui.utils.CustomStringUtil;
 import com.automation.ui.utils.DateUtil;
@@ -13,43 +13,43 @@ import org.assertj.core.api.SoftAssertions;
 
 import java.util.List;
 
-public class LscmReportPageSteps extends BaseSteps {
+public class PxiReportPageSteps extends BaseSteps {
 
-    private final LscmReportPage lscmReportPage = getPageObject(LscmReportPage.class);
+    private final PxiReportPage pxiReportPage = getPageObject(PxiReportPage.class);
 
-    public LscmReportPageSteps(TestContext testContext) {
+    public PxiReportPageSteps(TestContext testContext) {
         super(testContext);
     }
 
-    @Then("^verify RQ LSCM Report page is displayed for (Order|Contract) User$")
+    @Then("^verify NI PXI Report page is displayed for (Order|Contract) User$")
     public void verifyProcessOrderPage(String user) {
-        Assertions.assertThat(lscmReportPage.getTitle()).startsWith("RealQuest.com");
+        Assertions.assertThat(pxiReportPage.getTitle()).startsWith("Engineer Ambitiously - NI");
         if (user.equals("Contract"))
-            Assertions.assertThat(lscmReportPage.isElementDisplayed("Section - USV Header")).isTrue();
+            Assertions.assertThat(pxiReportPage.isElementDisplayed("Section - USV Header")).isTrue();
         takeScreenshot();
     }
 
-    @Then("verify LSCM Report is displayed in RQ LSCM Report page")
+    @Then("verify PXI Report is displayed in NI PXI Report page")
     public void verifySearchPage() {
-        Assertions.assertThat(lscmReportPage.isElementDisplayed("Section - LSCM Report")).isTrue();
-        Assertions.assertThat(lscmReportPage.isElementDisplayed("Section - LSCM Report Header")).isTrue();
+        Assertions.assertThat(pxiReportPage.isElementDisplayed("Section - PXI Report")).isTrue();
+        Assertions.assertThat(pxiReportPage.isElementDisplayed("Section - PXI Report Header")).isTrue();
         takeScreenshot();
     }
 
-    @Then("verify the Section is displayed in RQ LSCM Report page")
+    @Then("verify the Section is displayed in NI PXI Report page")
     public void isSectionDisplayed(List<String> sections) {
         SoftAssertions.assertSoftly(softly -> {
             for (String section : sections) {
-                boolean isSectionFound = lscmReportPage.isElementDisplayed(section);
+                boolean isSectionFound = pxiReportPage.isElementDisplayed(section);
                 AssertionUtil.assertSectionFound(softly, section, isSectionFound);
             }
         });
     }
 
-    @Then("verify the expected Field Value is displayed in RQ LSCM Report page")
+    @Then("verify the expected Field Value is displayed in NI PXI Report page")
     public void verifyExpectedFieldValue(List<FieldTable> fieldTable) {
         SoftAssertions.assertSoftly(softly -> fieldTable.forEach(it -> {
-            String extractedText = lscmReportPage.getElementText(it.getFieldName()).trim();
+            String extractedText = pxiReportPage.getElementText(it.getFieldName()).trim();
             if (it.getFieldValue().equals("[NOT EMPTY]")) {
                 AssertionUtil.assertFieldValueNotEmpty(softly, it.getFieldName(), extractedText);
             } else if (it.getFieldValue().startsWith("[MATCH -->")) {

@@ -1,21 +1,21 @@
 @ui
-@rq
-@lsrm
-Feature: RQ - LSRM Report Generation And Validation
+@ni
+@lab
+Feature: NI - LAB Report Generation And Validation
 
   @contract
-  Scenario: Verify RQ - LSRM Report Generation using Contract User
-    Given open RQ URL
-    When login in RQ Application with Contract User
-    Then verify RQ Subject Search page is displayed
-    When navigate to Risk Manager in Loan Safe Tab in RQ Application
+  Scenario: Verify NI - LAB Report Generation using Contract User
+    Given open NI URL
+    When login in NI Application with Contract User
+    Then verify NI Subject Search page is displayed
+    When navigate to Risk Manager in Loan Safe Tab in NI Application
     And switch to New window
-    Then verify RQ LSRM Input page is displayed for Contract User
-    And click to EXPAND the sections in in RQ LSRM Input page
+    Then verify NI LAB Input page is displayed for Contract User
+    And click to EXPAND the sections in in NI LAB Input page
       | Primary Borrower Information  |
       | Real Estate Owned Information |
       | Loan Data Information         |
-    When the TEXT BOX is filled with values in RQ LSRM Input page
+    When the TEXT BOX is filled with values in NI LAB Input page
       | Field Name                | Field Value              |
       | Street Address            | 202 hartnell pl          |
       | City                      | sacramento               |
@@ -55,7 +55,7 @@ Feature: RQ - LSRM Report Generation And Validation
       | LD Loan Term              | 1                        |
       | LD Interest Rate          | 5                        |
       | LD Cash Out Amount        | 60,000                   |
-    And the DROP DOWN is filled with values in RQ LSRM Input page
+    And the DROP DOWN is filled with values in NI LAB Input page
       | Field Name                      | Field Value                           |
       | Property Type                   | PUD                                   |
       | Occupancy Type                  | Primary Residence                     |
@@ -69,10 +69,10 @@ Feature: RQ - LSRM Report Generation And Validation
       | LD Loan Status                  | Application                           |
       | LD Document Type                | Full doc                              |
       | LD Lien Type                    | First                                 |
-    And click on Submit button in RQ LSRM Input page
-    Then verify RQ LSRM Report page is displayed for Contract User
-    And verify LSRM Report is displayed in RQ LSRM Report page
-    And verify the Section is displayed in RQ LSRM Report page
+    And click on Submit button in NI LAB Input page
+    Then verify NI LAB Report page is displayed for Contract User
+    And verify LAB Report is displayed in NI LAB Report page
+    And verify the Section is displayed in NI LAB Report page
       | Section - Information1       |
       | Section - Information2       |
       | Section - Search Summary     |
@@ -85,7 +85,7 @@ Feature: RQ - LSRM Report Generation And Validation
       | Section - Third Party Detail |
       | Section - Market Detail      |
       | Section - Disclaimer         |
-    And verify the expected Field Value is displayed in RQ LSRM Report page
+    And verify the expected Field Value is displayed in NI LAB Report page
       | Field Name                         | Field Value                             |
       | USV - Report Order No.             | [NOT EMPTY]                             |
       | USV - Street Address               | 202 HARTNELL PL                         |
@@ -99,18 +99,18 @@ Feature: RQ - LSRM Report Generation And Validation
       | FA - Fraud Risk Score              | [MATCH --> FRAUD RISK SCORE:  \\d{1,3}] |
 
   @order
-  Scenario: Verify RQ - LSRM Report Generation using Order User
-    Given open RQ URL
-    When login in RQ Application with Order User
-    Then verify RQ Subject Search page is displayed
-    When navigate to Risk Manager in Loan Safe Tab in RQ Application
+  Scenario: Verify NI - LAB Report Generation using Order User
+    Given open NI URL
+    When login in NI Application with Order User
+    Then verify NI Subject Search page is displayed
+    When navigate to Risk Manager in Loan Safe Tab in NI Application
     And switch to New window
-    Then verify RQ LSRM Input page is displayed for Order User
-    And click to EXPAND the sections in in RQ LSRM Input page
+    Then verify NI LAB Input page is displayed for Order User
+    And click to EXPAND the sections in in NI LAB Input page
       | Primary Borrower Information  |
       | Real Estate Owned Information |
       | Loan Data Information         |
-    When the TEXT BOX is filled with values in RQ LSRM Input page
+    When the TEXT BOX is filled with values in NI LAB Input page
       | Field Name                | Field Value              |
       | Street Address            | 202 hartnell pl          |
       | City                      | sacramento               |
@@ -150,7 +150,7 @@ Feature: RQ - LSRM Report Generation And Validation
       | LD Loan Term              | 1                        |
       | LD Interest Rate          | 5                        |
       | LD Cash Out Amount        | 60,000                   |
-    And the DROP DOWN is filled with values in RQ LSRM Input page
+    And the DROP DOWN is filled with values in NI LAB Input page
       | Field Name                      | Field Value                           |
       | Property Type                   | PUD                                   |
       | Occupancy Type                  | Primary Residence                     |
@@ -164,10 +164,10 @@ Feature: RQ - LSRM Report Generation And Validation
       | LD Loan Status                  | Application                           |
       | LD Document Type                | Full doc                              |
       | LD Lien Type                    | First                                 |
-    And click on Submit button in RQ LSRM Input page
-    Then verify RQ LSRM Report page is displayed for Order User
-    And verify LSRM Report is displayed in RQ LSRM Report page
-    And verify the Section is displayed in RQ LSRM Report page
+    And click on Submit button in NI LAB Input page
+    Then verify NI LAB Report page is displayed for Order User
+    And verify LAB Report is displayed in NI LAB Report page
+    And verify the Section is displayed in NI LAB Report page
       | Section - Information1       |
       | Section - Information2       |
       | Section - Search Summary     |
@@ -180,7 +180,7 @@ Feature: RQ - LSRM Report Generation And Validation
       | Section - Third Party Detail |
       | Section - Market Detail      |
       | Section - Disclaimer         |
-    And verify the expected Field Value is displayed in RQ LSRM Report page
+    And verify the expected Field Value is displayed in NI LAB Report page
       | Field Name                         | Field Value                             |
       | RI - Report Order No.              | [NOT EMPTY]                             |
       | RI - Report Date                   | [DATETIME --> MMM d, yyyy h:mma]        |

@@ -23,15 +23,15 @@ public class ProcessOrderPageSteps extends BaseSteps {
 
     @Then("verify CRM Process Order page is displayed")
     public void verifyProcessOrderPage() {
-        Assertions.assertThat(processOrderPage.getTitle()).isEqualTo("LoanSafe Reporter");
+        Assertions.assertThat(processOrderPage.getTitle()).isEqualTo("Free CRM software");
         Assertions.assertThat(processOrderPage.isElementDisplayed("Section - USV Header")).isTrue();
         takeScreenshot();
     }
 
-    @Then("verify LSFM Report is displayed in CRM Process Order page")
+    @Then("verify DAQ Report is displayed in CRM Process Order page")
     public void verifySearchPage() {
-        Assertions.assertThat(processOrderPage.isElementDisplayed("Section - LSFM Report")).isTrue();
-        Assertions.assertThat(processOrderPage.isElementDisplayed("Section - LSFM Report Header")).isTrue();
+        Assertions.assertThat(processOrderPage.isElementDisplayed("Section - DAQ Report")).isTrue();
+        Assertions.assertThat(processOrderPage.isElementDisplayed("Section - DAQ Report Header")).isTrue();
         takeScreenshot();
     }
 

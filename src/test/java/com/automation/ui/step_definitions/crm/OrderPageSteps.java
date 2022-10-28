@@ -24,7 +24,7 @@ public class OrderPageSteps extends BaseSteps {
 
     @Then("verify CRM Order page is displayed")
     public void verifySearchPage() {
-        Assertions.assertThat(orderPage.getTitle()).isEqualTo("LoanSafe Reporter");
+        Assertions.assertThat(orderPage.getTitle()).isEqualTo("Free CRM software");
         Assertions.assertThat(orderPage.getHeaderName()).startsWith("LoanSafe Fraud Manager");
         takeScreenshot();
     }

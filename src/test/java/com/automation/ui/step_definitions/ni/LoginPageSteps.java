@@ -1,9 +1,9 @@
-package com.automation.ui.step_definitions.rq;
+package com.automation.ui.step_definitions.ni;
 
 import com.automation.ui.configuration.Config;
 import com.automation.ui.step_definitions.common.BaseSteps;
 import com.automation.ui.cucumber.TestContext;
-import com.automation.ui.pages.rq.LoginPage;
+import com.automation.ui.pages.ni.LoginPage;
 import io.cucumber.java.en.When;
 
 public class LoginPageSteps extends BaseSteps {
@@ -14,11 +14,11 @@ public class LoginPageSteps extends BaseSteps {
         super(testContext);
     }
 
-    @When("^login in RQ Application with (Order|Contract) User$")
+    @When("^login in NI Application with (Order|Contract) User$")
     public void login(String user) {
         if (user.equalsIgnoreCase("Order"))
-            loginPage.doLogin(Config.RQ_ORDER_USER, Config.RQ_ORDER_PSWD);
+            loginPage.doLogin(Config.NI_ORDER_USER, Config.NI_ORDER_PSWD);
         else if (user.equalsIgnoreCase("Contract"))
-            loginPage.doLogin(Config.RQ_CONTRACT_USER, Config.RQ_CONTRACT_PSWD);
+            loginPage.doLogin(Config.NI_CONTRACT_USER, Config.NI_CONTRACT_PSWD);
     }
 }

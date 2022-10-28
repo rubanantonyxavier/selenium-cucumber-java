@@ -71,7 +71,7 @@ Feature: CRM - Order
       | LD Lien Type                    | First                                 |
     And click on Submit button in CRM Order page
     Then verify CRM Process Order page is displayed
-    And verify LSFM Report is displayed in CRM Process Order page
+    And verify DAQ Report is displayed in CRM Process Order page
     And verify the expected Field Value is displayed in CRM Process Order page
       | Field Name             | Field Value                             |
       | USV - Report Order No. | [NOT EMPTY]                             |

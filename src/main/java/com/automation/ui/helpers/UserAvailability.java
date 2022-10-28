@@ -11,9 +11,9 @@ public class UserAvailability {
     private final Map<String, Boolean> userStatus = new HashMap<>();
 
     static {
-        userStatus.put(Config.LSR_CONTRACT_USER, false);
-        userStatus.put(Config.RQ_CONTRACT_USER, false);
-        userStatus.put(Config.RQ_ORDER_USER, false);
+        userStatus.put(Config.CRM_CONTRACT_USER, false);
+        userStatus.put(Config.NI_CONTRACT_USER, false);
+        userStatus.put(Config.NI_ORDER_USER, false);
     }
 
     public synchronized void setUserStatusAsInUse(String user) {

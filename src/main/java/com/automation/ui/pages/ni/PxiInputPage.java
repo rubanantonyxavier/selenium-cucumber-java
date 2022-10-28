@@ -1,4 +1,4 @@
-package com.automation.ui.pages.rq;
+package com.automation.ui.pages.ni;
 
 import com.automation.ui.base.BasePage;
 import com.automation.ui.helpers.ElementName;
@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class LscmInputPage extends BasePage {
+public class PxiInputPage extends BasePage {
 
     @FindBy(id = "collateralTitle")
     private WebElement headerName;
@@ -18,7 +18,7 @@ public class LscmInputPage extends BasePage {
     @FindBy(id = "validateSbmtBtn")
     private WebElement submitButton;
 
-    //LSCM Input Section
+    //PXI Input Section
     @ElementName("Street Address")
     @FindBy(id = "LSC_address")
     private WebElement streetAddress;

@@ -1,4 +1,4 @@
-package com.automation.ui.pages.rq;
+package com.automation.ui.pages.ni;
 
 import com.automation.ui.base.BasePage;
 import com.automation.ui.helpers.CustomExpectedConditions;

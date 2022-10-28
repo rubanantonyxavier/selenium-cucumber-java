@@ -18,13 +18,13 @@ public class LoginPageSteps extends BaseSteps {
 
     @Then("verify CRM Login page is displayed")
     public void verifyLoginPage() {
-        Assertions.assertThat(loginPage.getTitle()).isEqualTo("LoanSafe Reporter");
+        Assertions.assertThat(loginPage.getTitle()).isEqualTo("Free CRM software");
         takeScreenshot();
     }
 
     @When("login in CRM Application")
     public void login() {
-        loginPage.doLogin(Config.LSR_CONTRACT_USER, Config.LSR_CONTRACT_PSWD);
+        loginPage.doLogin(Config.CRM_CONTRACT_USER, Config.CRM_CONTRACT_PSWD);
     }
 
     @Then("logout page is displayed in CRM")

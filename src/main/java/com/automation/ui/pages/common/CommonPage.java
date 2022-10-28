@@ -13,7 +13,7 @@ public class CommonPage extends BasePage {
      */
     public String getUrl(String ui) {
         return switch (ui) {
-            case "RQ" -> Config.getEnvConfig().getUrls().getRqUI();
+            case "NI" -> Config.getEnvConfig().getUrls().getNiUI();
             case "CRM" -> Config.getEnvConfig().getUrls().getCrmUI();
             default -> throw new RuntimeException(ui + " - The provided Application URL is not available");
         };

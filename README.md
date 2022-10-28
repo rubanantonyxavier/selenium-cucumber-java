@@ -1,4 +1,4 @@
-# QA Automation Framework for Web UI Applications
+# Test Automation Framework for Web UI Applications
 This is the Test Automation framework for Web UI Applications using Selenium WebDriver, Cucumber, Pico-container, Gradle & Allure Report
 
 ## Run tests
@@ -46,24 +46,24 @@ headless_browser=true
 Creds are set with environment variables:
 ```properties
 ###For CRM###
-LSR_CONTRACT_USER
-LSR_CONTRACT_PSWD
+CRM_CONTRACT_USER
+CRM_CONTRACT_PSWD
 
-###For RQ###
-RQ_ORDER_USER
-RQ_ORDER_PSWD
-RQ_CONTRACT_USER
-RQ_CONTRACT_PSWD
+###For NI###
+NI_ORDER_USER
+NI_ORDER_PSWD
+NI_CONTRACT_USER
+NI_CONTRACT_PSWD
 ```
 
 ### Scenario filtering:
 `-P tags=@crm` - to run scenario with _@lsr_ tag only,
 
-`-P tags="@crm and @rq"` - to run only scenarios with both the _@lsr_ and _@rq_ tags
+`-P tags="@crm and @ni"` - to run only scenarios with both the _@lsr_ and _@rq_ tags
 
-`-P tags="@crm or @rq"` - to run only scenarios with either the _@lsr_ or _@rq_ tags
+`-P tags="@crm or @ni"` - to run only scenarios with either the _@lsr_ or _@rq_ tags
 
-`-P tags="@ui and not @rq"` - to run `@ui` tests and exclude `@rq` tags
+`-P tags="@ui and not @ni"` - to run `@ui` tests and exclude `@ni` tags
 
 ### Parallel running:
 `-P threads=10`
@@ -85,13 +85,13 @@ Please follow this convention:
 * Tags in cucumber-java are case-sensitive
 
 ### Env-dependent exclusion:
-if you need to make some scenario to be environment specific, add a tag `@dev_only`, `@qa_only` or `@uat_only` accordingly. See _[Verify RQ - LSCM Report Generation using Order User](src/test/resources/features/rq/RQ_LSCM_Report_Generation.feature)_ scenario as an example:
+if you need to make some scenario to be environment specific, add a tag `@dev_only`, `@qa_only` or `@uat_only` accordingly. See _[Verify NI - PXI Report Generation using Order User](src/test/resources/features/ni/NI_PXI_Report_Generation.feature)_ scenario as an example:
 ```gherkin
 @order
 @qa_only
-Scenario: Verify RQ - LSCM Report Generation using Order User
-Given open RQ URL
-When login in RQ Application with Order User
-Then verify RQ Subject Search page is displayed
-When click on Property tab in RQ Subject Search page
+Scenario: Verify NI - PXI Report Generation using Order User
+Given open NI URL
+When login in NI Application with Order User
+Then verify NI Subject Search page is displayed
+When click on Property tab in NI Subject Search page
 ```

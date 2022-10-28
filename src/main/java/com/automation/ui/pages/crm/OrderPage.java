@@ -63,7 +63,7 @@ public class OrderPage extends BasePage {
     @FindBy(id = "LSF_uptoloanactor")
     private WebElement loanActorsSection;
 
-    //LSFM Input Section
+    //DAQ Input Section
     @ElementName("Street Address")
     @FindBy(id = "LSF_address")
     private WebElement streetAddress;

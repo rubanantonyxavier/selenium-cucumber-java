@@ -21,7 +21,7 @@ public class SearchPageSteps extends BaseSteps {
     @Then("verify CRM Search page is displayed")
     public void verifySearchPage() {
         Assertions.assertThat(searchPage.getHeaderName()).isEqualTo("Search Transactions");
-        Assertions.assertThat(searchPage.getTitle()).isEqualTo("LoanSafe Reporter");
+        Assertions.assertThat(searchPage.getTitle()).isEqualTo("Free CRM software");
         takeScreenshot();
     }
 

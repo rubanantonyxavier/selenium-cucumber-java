@@ -1,4 +1,4 @@
-package com.automation.ui.pages.rq;
+package com.automation.ui.pages.ni;
 
 import com.automation.ui.base.BasePage;
 import com.automation.ui.helpers.ElementName;
@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class LsrmReportPage extends BasePage {
+public class LabReportPage extends BasePage {
 
     @FindBy(id = "emailexportMenuBarTop")
     private WebElement topMenuBar;
@@ -29,11 +29,11 @@ public class LsrmReportPage extends BasePage {
     private WebElement usvCityStateZip;
 
     //Report Section
-    @ElementName("Section - LSRM Report")
-    @FindBy(id = "lsrm")
+    @ElementName("Section - LAB Report")
+    @FindBy(id = "lab")
     private WebElement lsrmReportSection;
 
-    @ElementName("Section - LSRM Report Header")
+    @ElementName("Section - LAB Report Header")
     @FindBy(className = "header_table")
     private WebElement lsrmReportHeaderSection;
 
