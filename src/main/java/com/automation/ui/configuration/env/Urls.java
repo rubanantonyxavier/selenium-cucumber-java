@@ -8,6 +8,6 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Urls {
-    private String rqUI;
-    private String lsrUI;
+    private String niUI;
+    private String crmUI;
 }

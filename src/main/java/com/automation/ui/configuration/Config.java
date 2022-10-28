@@ -24,11 +24,11 @@ public class Config {
             || (System.getProperty(HEADLESS_BROWSER_ENV_VAR_KEY) != null)
             && !"false".equalsIgnoreCase(System.getProperty(HEADLESS_BROWSER_ENV_VAR_KEY));
     public final int TIMEOUT_SEC = 30;
-    public final String LSR_CONTRACT_USER = System.getenv("LSR_CONTRACT_USER");
-    public final String LSR_CONTRACT_PSWD = System.getenv("LSR_CONTRACT_PSWD");
-    public final String RQ_ORDER_USER = System.getenv("RQ_ORDER_USER");
-    public final String RQ_ORDER_PSWD = System.getenv("RQ_ORDER_PSWD");
-    public final String RQ_CONTRACT_USER = System.getenv("RQ_CONTRACT_USER");
-    public final String RQ_CONTRACT_PSWD = System.getenv("RQ_CONTRACT_PSWD");
+    public final String CRM_CONTRACT_USER = System.getenv("CRM_CONTRACT_USER");
+    public final String CRM_CONTRACT_PSWD = System.getenv("CRM_CONTRACT_PSWD");
+    public final String NI_ORDER_USER = System.getenv("NI_ORDER_USER");
+    public final String NI_ORDER_PSWD = System.getenv("NI_ORDER_PSWD");
+    public final String NI_CONTRACT_USER = System.getenv("NI_CONTRACT_USER");
+    public final String NI_CONTRACT_PSWD = System.getenv("NI_CONTRACT_PSWD");
     private @Getter @Setter EnvConfig envConfig;
 }
