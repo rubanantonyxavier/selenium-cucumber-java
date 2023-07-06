@@ -83,15 +83,3 @@ Please follow this convention:
 * tag name is lowercase
 * if tag is more than one word, use `_` character as a space
 * Tags in cucumber-java are case-sensitive
-
-### Env-dependent exclusion:
-if you need to make some scenario to be environment specific, add a tag `@dev_only`, `@qa_only` or `@uat_only` accordingly. See _[Verify NI - PXI Report Generation using Order User](src/test/resources/features/ni/NI_PXI_Report_Generation.feature)_ scenario as an example:
-```gherkin
-@order
-@qa_only
-Scenario: Verify NI - PXI Report Generation using Order User
-Given open NI URL
-When login in NI Application with Order User
-Then verify NI Subject Search page is displayed
-When click on Property tab in NI Subject Search page
-```
